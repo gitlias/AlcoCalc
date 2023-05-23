@@ -3,11 +3,16 @@
     <!--    Hier Textfeldbeschriftungen:-->
     <string name="body_weight">Body-weight in kg</string>
     <string name="blood_amount">Blood Amount in ml</string>
-    <string name="desired_bac">Desired Blood Alcohol Content</string>
+    <string name="desired_bac">Blood-Alcohol</string>
     <string name="beer_button">Beer (5%)</string>
-    <string name="liquro_button">Liqueur (25%)</string>
+    <string name="liquro_button">Liquor (25%)</string>
     <string name="spirit_button">Spirit (40%)</string>
     <string name="buttons_title">Drink of Choice</string>
     <string name="other_button">Other (input Percentage)</string>
+    <string name="in_perc">Input Percentage</string>
+    <string name="bw_pls">Please input your Body-weight</string>
+    <string name="desired_bac_pls">Please input your desired Blood Alcohol Level</string>
+    <string name="subtit">How much do I need to drink?</string>
+    <string name="button_calc">Calculate!</string>
 
 </resources>

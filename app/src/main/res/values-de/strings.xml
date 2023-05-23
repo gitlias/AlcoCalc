@@ -3,5 +3,15 @@
     <string name="app_name">AlcoCalc</string>
     <string name="body_weight">Körpergewicht in kg</string>
     <string name="blood_amount">Blutmenge in ml</string>
-    <string name="desired_bac">Gewünschter Promilleanteil von Alkohol im Blut</string>
+    <string name="desired_bac">Promille</string>
+    <string name="liquro_button">Likör (25%)</string>
+    <string name="spirit_button">Schnaps (40%)</string>
+    <string name="buttons_title">Gewünschtes Getränk</string>
+    <string name="other_button">Andere (Prozent eingeben)</string>
+    <string name="beer_button">Bier (5%)</string>
+    <string name="in_perc">Prozent eingeben</string>
+    <string name="bw_pls">Bitte geben Sie ihr Körpergewicht ein</string>
+    <string name="desired_bac_pls">Bitte geben Sie den gewünschten Promilleanteil im Blut an</string>
+    <string name="subtit">Wie viel muss ich trinken?</string>
+    <string name="button_calc">Berechnen!</string>
 </resources>
