@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AlcoCalc</string>
+    <string name="body_weight">Körpergewicht in kg</string>
+    <string name="blood_amount">Blutmenge in ml</string>
+    <string name="desired_bac">Gewünschter Promilleanteil von Alkohol im Blut</string>
+</resources>
