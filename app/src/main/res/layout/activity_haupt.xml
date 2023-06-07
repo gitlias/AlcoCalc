@@ -20,7 +20,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/tf_bodyw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -41,10 +41,10 @@
         android:text="@string/desired_bac_pls"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintTop_toBottomOf="@+id/tf_bodyw" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal2"
+        android:id="@+id/tf_bac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -61,8 +61,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberDecimal2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2">
+        app:layout_constraintStart_toStartOf="@+id/tf_bac"
+        app:layout_constraintTop_toBottomOf="@+id/tf_bac">
 
         <TextView
             android:id="@+id/textView6"
@@ -72,31 +72,36 @@
             android:textSize="18sp" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radio_Beer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
+            android:tag="beer"
             android:text="@string/beer_button" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radio_liquor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:tag="liquor"
             android:text="@string/liquro_button" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radio_spirit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:tag="spirit"
             android:text="@string/spirit_button" />
 
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:tag="other"
             android:text="@string/other_button" />
 
         <EditText
-            android:id="@+id/editTextNumberDecimal3"
+            android:id="@+id/tf_perc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -136,7 +141,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bt_calc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_calc"

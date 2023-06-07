@@ -14,5 +14,11 @@
     <string name="desired_bac_pls">Please input your desired Blood Alcohol Level</string>
     <string name="subtit">How much do I need to drink?</string>
     <string name="button_calc">Calculate!</string>
+    
+    <!-- Hier Java Strings   -->
+    
+    <string name="no_input_title">No Input</string>
+    <string name="no_input_body">Without an input there is nothing to calculate, please try again.</string>
+    <string name="d_reset">Reset</string>
 
 </resources>

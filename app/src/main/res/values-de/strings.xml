@@ -14,4 +14,6 @@
     <string name="desired_bac_pls">Bitte geben Sie den gewünschten Promilleanteil im Blut an</string>
     <string name="subtit">Wie viel muss ich trinken?</string>
     <string name="button_calc">Berechnen!</string>
+    <string name="no_input_title">Kein Input</string>
+    <string name="no_input_body">Ohne Input gibt es nichts zu berechnen, versuchen Sie es noch einmal.</string>
 </resources>
