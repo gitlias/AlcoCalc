@@ -43,11 +43,11 @@ public class HauptActivity extends AppCompatActivity {
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 radioButton = findViewById(radioId);
                 radioTag = radioButton.getTag().toString();
-                if(radioButton.equals("beer")){
+                if(radioTag.equals("beer")){
                     sel = 0.05;
-                }if(radioButton.equals("liquor")){
+                }if(radioTag.equals("liquor")){
                     sel = 0.25;
-                }if(radioButton.equals("spirit")){
+                }if(radioTag.equals("spirit")){
                     sel = 0.4;
                 }
 
@@ -57,7 +57,7 @@ public class HauptActivity extends AppCompatActivity {
                     bw = Double.parseDouble(input_bw.getText().toString());
                     bac = Double.parseDouble(input_bac.getText().toString());
                     if(radioTag.equals("other")){
-                        perc = Double.parseDouble(input_perc.getText().toString());
+                        perc = Double.parseDouble(input_perc.getText().toString())/100;
                         sel = bac;
                     }
                 }catch (Exception e){
@@ -66,6 +66,7 @@ public class HauptActivity extends AppCompatActivity {
                 }
                 if (!error) {
                     //erg = hier berechnung
+                    erg = (0.008*bw*bac)/(1000*sel)*1000;
 
 
 
@@ -74,7 +75,8 @@ public class HauptActivity extends AppCompatActivity {
 
 
 
-                    DialogHelper.resetDialog(HauptActivity.this, "Benötigte menge Getränk", "Es werden solasdjflasdf", input_bac, input_bw, input_perc);
+                    DialogHelper.resetDialog(HauptActivity.this, "Benötigte menge Getränk", "Es werden " + erg + "ml Ihres Getränkes benötigt", input_bac, input_bw, input_perc);
+                    DialogHelper.resetDialog(HauptActivity.this, "Debug msg", "sel "+sel+" bw "+ bw + " perc " + perc + " bac "+ bac +" radioTag " + radioTag, input_bac, input_bw, input_perc);
                 }
 
 
