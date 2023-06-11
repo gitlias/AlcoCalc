@@ -16,4 +16,8 @@
     <string name="button_calc">Berechnen!</string>
     <string name="no_input_title">Kein Input</string>
     <string name="no_input_body">Ohne Input gibt es nichts zu berechnen, versuchen Sie es noch einmal.</string>
+    <string name="bac_too_high_title">Promille zu hoch</string>
+    <string name="bac_too_high_body">Promillewert kann nicht höher als 1000 sein. Versuchen Sie es erneut.</string>
+    <string name="perc_too_low_title">Volumenalkohol zu niedrig</string>
+    <string name="perc_too_low_body">Ohne Volumenalkohol kann der Promillewert nicht gesteigert werden.</string>
 </resources>

@@ -58,7 +58,7 @@ public class HauptActivity extends AppCompatActivity {
                     bac = Double.parseDouble(input_bac.getText().toString());
                     if(radioTag.equals("other")){
                         perc = Double.parseDouble(input_perc.getText().toString())/100;
-                        sel = bac;
+                        sel = perc;
                     }
                 }catch (Exception e){
                     error = true;
@@ -66,17 +66,19 @@ public class HauptActivity extends AppCompatActivity {
                 }
                 if (!error) {
                     //erg = hier berechnung
-                    erg = (0.008*bw*bac)/(1000*sel)*1000;
+                    if (bac > 1000 && perc < 0 && bw > 0) {
+                    } else if (bac > 1000) {
+                        DialogHelper.ocDialog(HauptActivity.this, getString(R.string.bac_too_high_title), getString(R.string.bac_too_high_body));
+                    } else if (perc < 0 && radioTag.equals("other")) {
+                        DialogHelper.ocDialog(HauptActivity.this, getString(R.string.perc_too_low_title), getString(R.string.perc_too_low_body));
+                    } else {
+                        erg = (0.08*bw*bac)/(1000*sel)*1000;
+                        DialogHelper.resetDialog(HauptActivity.this, "Benötigte menge Getränk", "Es werden " + erg + "ml Ihres Getränkes benötigt", input_bac, input_bw, input_perc);
+                    }
 
+                    //erg = (0.08*bw*bac)/(1000*sel)*1000;
 
-
-
-
-
-
-
-                    DialogHelper.resetDialog(HauptActivity.this, "Benötigte menge Getränk", "Es werden " + erg + "ml Ihres Getränkes benötigt", input_bac, input_bw, input_perc);
-                    DialogHelper.resetDialog(HauptActivity.this, "Debug msg", "sel "+sel+" bw "+ bw + " perc " + perc + " bac "+ bac +" radioTag " + radioTag, input_bac, input_bw, input_perc);
+                    //DialogHelper.resetDialog(HauptActivity.this, "Debug msg", "sel "+sel+" bw "+ bw + " perc " + perc + " bac "+ bac +" radioTag " + radioTag, input_bac, input_bw, input_perc);
                 }
 
 
