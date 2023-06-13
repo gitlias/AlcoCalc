@@ -16,8 +16,13 @@
     <string name="button_calc">Berechnen!</string>
     <string name="no_input_title">Kein Input</string>
     <string name="no_input_body">Ohne Input gibt es nichts zu berechnen, versuchen Sie es noch einmal.</string>
-    <string name="bac_too_high_title">Promille zu hoch</string>
-    <string name="bac_too_high_body">Promillewert kann nicht höher als 1000 sein. Versuchen Sie es erneut.</string>
-    <string name="perc_too_low_title">Volumenalkohol zu niedrig</string>
-    <string name="perc_too_low_body">Ohne Volumenalkohol kann der Promillewert nicht gesteigert werden.</string>
+    <string name="bac_too_high_title">Promille ungültig</string>
+    <string name="bac_too_high_body">Promillewert kann nicht niedriger als 0,1 oder höher als 1000 sein. Versuchen Sie es erneut.</string>
+    <string name="perc_too_low_title">Volumenalkohol ungültig</string>
+    <string name="perc_too_low_body">Volumenalkohol muss zwischen 0,1 und 100 liegen. Versuchen Sie es erneut.</string>
+    <string name="bw_too_low_title">Körpergewicht ungültig</string>
+    <string name="bw_too_low_body">Bitte geben sie ein Körpergewicht zwischen 1 und 1000kg ein</string>
+    <string name="main_message_title">Benötigte Menge Getränk</string>
+    <string name="message_part_1">"Es werden "</string>
+    <string name="message_part_2">ml des gewünschten Getränkes benötigt.</string>
 </resources>

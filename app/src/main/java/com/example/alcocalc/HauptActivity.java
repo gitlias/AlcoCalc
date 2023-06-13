@@ -8,9 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
-
-import org.w3c.dom.NamedNodeMap;
 
 public class HauptActivity extends AppCompatActivity {
 
@@ -43,44 +40,46 @@ public class HauptActivity extends AppCompatActivity {
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 radioButton = findViewById(radioId);
                 radioTag = radioButton.getTag().toString();
-                if(radioTag.equals("beer")){
+                if (radioTag.equals("beer")) {
                     sel = 0.05;
-                }if(radioTag.equals("liquor")){
+                }
+                if (radioTag.equals("liquor")) {
                     sel = 0.25;
-                }if(radioTag.equals("spirit")){
+                }
+                if (radioTag.equals("spirit")) {
                     sel = 0.4;
                 }
 
 
-
-                try{
+                try {
                     bw = Double.parseDouble(input_bw.getText().toString());
                     bac = Double.parseDouble(input_bac.getText().toString());
-                    if(radioTag.equals("other")){
-                        perc = Double.parseDouble(input_perc.getText().toString())/100;
+                    if (radioTag.equals("other")) {
+                        perc = Double.parseDouble(input_perc.getText().toString()) / 100;
                         sel = perc;
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     error = true;
                     DialogHelper.ocDialog(HauptActivity.this, getString(R.string.no_input_title), getString(R.string.no_input_body));
                 }
                 if (!error) {
                     //erg = hier berechnung
-                    if (bac > 1000 && perc < 0 && bw > 0) {
-                    } else if (bac > 1000) {
-                        DialogHelper.ocDialog(HauptActivity.this, getString(R.string.bac_too_high_title), getString(R.string.bac_too_high_body));
-                    } else if (perc < 0 && radioTag.equals("other")) {
-                        DialogHelper.ocDialog(HauptActivity.this, getString(R.string.perc_too_low_title), getString(R.string.perc_too_low_body));
+                    if ((bac < 0.09) || (bac > 1000) || (bw <= 0.9) || (bw > 1000) || (((perc < 0.0009) || (perc > 1)) && radioTag.equals("other"))) {
+                        if ((bac < 0.09) || (bac > 1000)) {
+                            DialogHelper.ocDialog(HauptActivity.this, getString(R.string.bac_too_high_title), getString(R.string.bac_too_high_body));
+                        }
+                        if ((bw <= 0.9) || (bw > 1000)) {
+                            DialogHelper.ocDialog(HauptActivity.this, getString(R.string.bw_too_low_title), getString(R.string.bw_too_low_body));
+                        }
+                        if (((perc < 0.0009) || (perc > 1)) && radioTag.equals("other")) {
+                            DialogHelper.ocDialog(HauptActivity.this, getString(R.string.perc_too_low_title), getString(R.string.perc_too_low_body));
+                        }
                     } else {
-                        erg = (0.08*bw*bac)/(1000*sel)*1000;
-                        DialogHelper.resetDialog(HauptActivity.this, "Benötigte menge Getränk", "Es werden " + erg + "ml Ihres Getränkes benötigt", input_bac, input_bw, input_perc);
+                        erg = (0.08 * bw * bac) / (1000 * sel) * 1000;
+                        DialogHelper.resetDialog(HauptActivity.this, getString(R.string.main_message_title), getString(R.string.message_part_1) + round(erg, 2) + getString(R.string.message_part_2), input_bac, input_bw, input_perc);
                     }
-
-                    //erg = (0.08*bw*bac)/(1000*sel)*1000;
-
                     //DialogHelper.resetDialog(HauptActivity.this, "Debug msg", "sel "+sel+" bw "+ bw + " perc " + perc + " bac "+ bac +" radioTag " + radioTag, input_bac, input_bw, input_perc);
                 }
-
 
 
             }
@@ -89,10 +88,12 @@ public class HauptActivity extends AppCompatActivity {
     }
 
 
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
 
-
-    private void showToast(Double num){
-        Toast.makeText(HauptActivity.this, Double.toString(num), Toast.LENGTH_SHORT).show();
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
     }
-
 }

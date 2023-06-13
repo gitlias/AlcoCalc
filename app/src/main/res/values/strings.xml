@@ -19,10 +19,14 @@
     
     <string name="no_input_title">No Input</string>
     <string name="no_input_body">Without an input there is nothing to calculate, please try again.</string>
-    <string name="d_reset">Reset</string>
-    <string name="bac_too_high_title">BAC too high</string>
-    <string name="bac_too_high_body">BAC cannot be larger than 1000. Try again</string>
-    <string name="perc_too_low_title">Beverage alcohol content percentage too low</string>
+    <string name="bac_too_high_title">BAC invalid</string>
+    <string name="bac_too_high_body">BAC cannot be lower than 0.1 or higher than 1000. Try again</string>
+    <string name="perc_too_low_title">Beverage alcohol content percentage invalid</string>
     <string name="perc_too_low_body">If there is not alcohol content in the beverage there is no way to raise the BAC.</string>
+    <string name="bw_too_low_title">Body-weight invalid</string>
+    <string name="bw_too_low_body">Please input a body weight between 1 and 1000 kg.</string>
+    <string name="main_message_title">Amount of beverage required</string>
+    <string name="message_part_1">You need </string>
+    <string name="message_part_2">ml of the specified beverage.</string>
 
 </resources>
